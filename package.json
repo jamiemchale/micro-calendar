@@ -1,0 +1,31 @@
+{
+  "name": "micro-calendar",
+  "version": "0.0.1",
+  "description": "A microservice to fetch and simplify a Google Calendar Feed",
+  "keywords": "JavaScript, micro, microservice, calendar, Google Calendar",
+  "author": {
+    "name": "Jamie McHale",
+    "url": "https://www.jamiemchale.com/"
+  },
+  "homepage": "https://github.com/jamiemchale/micro-calendar",
+  "bugs": "https://github.com/jamiemchale/micro-calendar/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamiemchale/micro-calendar.git"
+  },
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cacheman": "^2.2.1",
+    "dotenv": "^4.0.0",
+    "micro": "^8.0.3",
+    "micro-cors": "0.0.4",
+    "node-fetch": "^1.7.2"
+  },
+  "devDependencies": {
+    "micro-dev": "^1.2.1"
+  }
+}
