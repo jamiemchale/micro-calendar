@@ -7,9 +7,9 @@ const Cacheman = require('cacheman')
 const cache = new Cacheman('googlecalendar', { ttl: 604800 })
 
 const getCalendar = async () => {
-  const result = await fetch(`https://www.googleapis.com/calendar/v3/calendars/${process.env.CALENDAR}/events?key=${process.env.SECRET}`)
+  const result = await fetch(`https://www.googleapis.com/calendar/v3/calendars/${process.env.CALENDAR}/events?orderBy=startTime&singleEvents=true&key=${process.env.SECRET}`)
   const json = await result.json();
-  return json.items.map(({ summary, start, end}) => ({ summary, start, end }))
+  return json.items ? json.items.map(({ summary, start, end, description, location }) => ({ summary, start, end, description, location })) : []
 }
 
 const handler = async (req, res) => {
